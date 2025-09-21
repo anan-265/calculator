@@ -44,6 +44,24 @@ for (let button of allButtons) {
 }
 deleteButton.addEventListener('click', deleteFunction);
 
+document.addEventListener('keydown', function(event) {
+    let key = event.key;
+    for (let button of allButtons) {
+        if (button.textContent === key) {
+            button.click();
+        }
+    }
+    if (key === "Enter") {
+        eqButton.click();
+    }
+    else if (key === "Backspace") {
+        deleteButton.click();
+    }
+    else if (key === "Escape") {
+        clrButton.click();
+    }
+});
+
 //Declaration of functions
 
 function eqClicked() {
